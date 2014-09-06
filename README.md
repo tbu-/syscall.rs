@@ -1,5 +1,7 @@
 # Raw system calls for Rust
 
+[![Build Status](https://travis-ci.org/kmcallister/syscall.rs.svg?branch=master)](https://travis-ci.org/kmcallister/syscall.rs)
+
 This library allows Rust code to invoke system calls directly.
 
 It currently only supports x86-64 Linux, but more platforms can be added.
