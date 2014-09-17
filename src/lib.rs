@@ -15,6 +15,8 @@
 #![feature(macro_rules, asm, globs)]
 #![no_std]
 
+extern crate core;
+
 #[cfg(test)]
 extern crate std;
 
