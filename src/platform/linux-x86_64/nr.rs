@@ -325,3 +325,4 @@ pub static KCMP                            : uint = 312;
 pub static FINIT_MODULE                    : uint = 313;
 pub static SCHED_SETATTR                   : uint = 314;
 pub static SCHED_GETATTR                   : uint = 315;
+pub static RENAMEAT2                       : uint = 316;
