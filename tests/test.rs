@@ -14,6 +14,7 @@ extern crate syscall;
 
 // getpid() is POSIX but that doesn't guarantee it's a system call.
 #[cfg(target_os="linux")]
+#[cfg(target_os="freebsd")]
 #[test]
 fn getpid() {
     unsafe {
@@ -22,6 +23,7 @@ fn getpid() {
 }
 
 #[cfg(target_os="linux")]
+#[cfg(target_os="freebsd")]
 #[test]
 fn getpid_macro() {
     unsafe {
