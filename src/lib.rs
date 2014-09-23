@@ -30,3 +30,7 @@ pub mod macros;
 #[cfg(target_os="linux", target_arch="x86_64")]
 #[path="platform/linux-x86_64/mod.rs"]
 pub mod platform;
+
+#[cfg(target_os="freebsd", target_arch="x86_64")]
+#[path="platform/freebsd-x86_64/mod.rs"]
+pub mod platform;
