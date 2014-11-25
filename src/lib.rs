@@ -20,9 +20,6 @@ extern crate core;
 #[cfg(test)]
 extern crate std;
 
-#[cfg(test)]
-extern crate native;
-
 pub use platform::*;
 
 pub mod macros;
