@@ -348,3 +348,7 @@ pub const FINIT_MODULE             : uint = 350;
 pub const SCHED_SETATTR            : uint = 351;
 pub const SCHED_GETATTR            : uint = 352;
 pub const RENAMEAT2                : uint = 353;
+pub const SECCOMP                  : uint = 354;
+pub const GETRANDOM                : uint = 355;
+pub const MEMFD_CREATE             : uint = 356;
+pub const BPF                      : uint = 357;
