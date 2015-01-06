@@ -9,7 +9,7 @@
 // except according to those terms.
 
 #[macro_export]
-macro_rules! syscall(
+macro_rules! syscall {
     ($nr:ident)
         => ( ::syscall::syscall0(
                 ::syscall::nr::$nr) );
@@ -46,4 +46,4 @@ macro_rules! syscall(
                 ::syscall::nr::$nr,
                 $a1 as uint, $a2 as uint, $a3 as uint,
                 $a4 as uint, $a5 as uint, $a6 as uint) );
-)
+}
