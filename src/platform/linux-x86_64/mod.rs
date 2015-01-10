@@ -12,8 +12,8 @@
 pub mod nr;
 
 #[inline(always)]
-pub unsafe fn syscall0(n: uint) -> uint {
-    let mut ret : uint;
+pub unsafe fn syscall0(n: usize) -> usize {
+    let mut ret : usize;
     asm!("syscall" : "={rax}"(ret)
                    : "{rax}"(n)
                    : "rcx", "r11", "memory"
@@ -22,8 +22,8 @@ pub unsafe fn syscall0(n: uint) -> uint {
 }
 
 #[inline(always)]
-pub unsafe fn syscall1(n: uint, a1: uint) -> uint {
-    let mut ret : uint;
+pub unsafe fn syscall1(n: usize, a1: usize) -> usize {
+    let mut ret : usize;
     asm!("syscall" : "={rax}"(ret)
                    : "{rax}"(n), "{rdi}"(a1)
                    : "rcx", "r11", "memory"
@@ -32,8 +32,8 @@ pub unsafe fn syscall1(n: uint, a1: uint) -> uint {
 }
 
 #[inline(always)]
-pub unsafe fn syscall2(n: uint, a1: uint, a2: uint) -> uint {
-    let mut ret : uint;
+pub unsafe fn syscall2(n: usize, a1: usize, a2: usize) -> usize {
+    let mut ret : usize;
     asm!("syscall" : "={rax}"(ret)
                    : "{rax}"(n), "{rdi}"(a1), "{rsi}"(a2)
                    : "rcx", "r11", "memory"
@@ -42,8 +42,8 @@ pub unsafe fn syscall2(n: uint, a1: uint, a2: uint) -> uint {
 }
 
 #[inline(always)]
-pub unsafe fn syscall3(n: uint, a1: uint, a2: uint, a3: uint) -> uint {
-    let mut ret : uint;
+pub unsafe fn syscall3(n: usize, a1: usize, a2: usize, a3: usize) -> usize {
+    let mut ret : usize;
     asm!("syscall" : "={rax}"(ret)
                    : "{rax}"(n), "{rdi}"(a1), "{rsi}"(a2), "{rdx}"(a3)
                    : "rcx", "r11", "memory"
@@ -52,9 +52,9 @@ pub unsafe fn syscall3(n: uint, a1: uint, a2: uint, a3: uint) -> uint {
 }
 
 #[inline(always)]
-pub unsafe fn syscall4(n: uint, a1: uint, a2: uint, a3: uint,
-                                a4: uint) -> uint {
-    let mut ret : uint;
+pub unsafe fn syscall4(n: usize, a1: usize, a2: usize, a3: usize,
+                                a4: usize) -> usize {
+    let mut ret : usize;
     asm!("syscall" : "={rax}"(ret)
                    : "{rax}"(n), "{rdi}"(a1), "{rsi}"(a2), "{rdx}"(a3),
                      "{r10}"(a4)
@@ -64,9 +64,9 @@ pub unsafe fn syscall4(n: uint, a1: uint, a2: uint, a3: uint,
 }
 
 #[inline(always)]
-pub unsafe fn syscall5(n: uint, a1: uint, a2: uint, a3: uint,
-                                a4: uint, a5: uint) -> uint {
-    let mut ret : uint;
+pub unsafe fn syscall5(n: usize, a1: usize, a2: usize, a3: usize,
+                                a4: usize, a5: usize) -> usize {
+    let mut ret : usize;
     asm!("syscall" : "={rax}"(ret)
                    : "{rax}"(n), "{rdi}"(a1), "{rsi}"(a2), "{rdx}"(a3),
                      "{r10}"(a4), "{r8}"(a5)
@@ -76,9 +76,9 @@ pub unsafe fn syscall5(n: uint, a1: uint, a2: uint, a3: uint,
 }
 
 #[inline(always)]
-pub unsafe fn syscall6(n: uint, a1: uint, a2: uint, a3: uint,
-                                a4: uint, a5: uint, a6: uint) -> uint {
-    let mut ret : uint;
+pub unsafe fn syscall6(n: usize, a1: usize, a2: usize, a3: usize,
+                                a4: usize, a5: usize, a6: usize) -> usize {
+    let mut ret : usize;
     asm!("syscall" : "={rax}"(ret)
                    : "{rax}"(n), "{rdi}"(a1), "{rsi}"(a2), "{rdx}"(a3),
                      "{r10}"(a4), "{r8}"(a5), "{r9}"(a6)

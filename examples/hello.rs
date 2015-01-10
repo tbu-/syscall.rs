@@ -7,12 +7,10 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
-#![feature(phase)]
-
-#[phase(plugin, link)]
+#[macro_use]
 extern crate syscall;
 
-fn write(fd: uint, buf: &[u8]) {
+fn write(fd: usize, buf: &[u8]) {
     unsafe {
         syscall!(WRITE, fd, buf.as_ptr(), buf.len());
     }

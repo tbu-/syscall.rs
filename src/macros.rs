@@ -17,33 +17,33 @@ macro_rules! syscall {
     ($nr:ident, $a1:expr)
         => ( ::syscall::syscall1(
                 ::syscall::nr::$nr,
-                $a1 as uint) );
+                $a1 as usize) );
 
     ($nr:ident, $a1:expr, $a2:expr)
         => ( ::syscall::syscall2(
                 ::syscall::nr::$nr,
-                $a1 as uint, $a2 as uint) );
+                $a1 as usize, $a2 as usize) );
 
     ($nr:ident, $a1:expr, $a2:expr, $a3:expr)
         => ( ::syscall::syscall3(
                 ::syscall::nr::$nr,
-                $a1 as uint, $a2 as uint, $a3 as uint) );
+                $a1 as usize, $a2 as usize, $a3 as usize) );
 
     ($nr:ident, $a1:expr, $a2:expr, $a3:expr, $a4:expr)
         => ( ::syscall::syscall4(
                 ::syscall::nr::$nr,
-                $a1 as uint, $a2 as uint, $a3 as uint,
-                $a4 as uint) );
+                $a1 as usize, $a2 as usize, $a3 as usize,
+                $a4 as usize) );
 
     ($nr:ident, $a1:expr, $a2:expr, $a3:expr, $a4:expr, $a5:expr)
         => ( ::syscall::syscall5(
                 ::syscall::nr::$nr,
-                $a1 as uint, $a2 as uint, $a3 as uint,
-                $a4 as uint, $a5 as uint) );
+                $a1 as usize, $a2 as usize, $a3 as usize,
+                $a4 as usize, $a5 as usize) );
 
     ($nr:ident, $a1:expr, $a2:expr, $a3:expr, $a4:expr, $a5:expr, $a6:expr)
         => ( ::syscall::syscall6(
                 ::syscall::nr::$nr,
-                $a1 as uint, $a2 as uint, $a3 as uint,
-                $a4 as uint, $a5 as uint, $a6 as uint) );
+                $a1 as usize, $a2 as usize, $a3 as usize,
+                $a4 as usize, $a5 as usize, $a6 as usize) );
 }

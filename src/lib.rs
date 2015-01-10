@@ -12,7 +12,9 @@
 #![crate_name="syscall"]
 #![crate_type="lib"]
 
-#![feature(macro_rules, asm, globs)]
+#![feature(asm)]
+#![deny(warnings)]
+#![allow(unstable)]
 #![no_std]
 
 extern crate core;
