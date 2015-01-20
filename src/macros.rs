@@ -46,4 +46,11 @@ macro_rules! syscall {
                 ::syscall::nr::$nr,
                 $a1 as usize, $a2 as usize, $a3 as usize,
                 $a4 as usize, $a5 as usize, $a6 as usize) );
+
+    ($nr:ident, $a1:expr, $a2:expr, $a3:expr, $a4:expr, $a5:expr, $a6:expr, $a7:expr)
+        => ( ::syscall::syscall7(
+                ::syscall::nr::$nr,
+                $a1 as usize, $a2 as usize, $a3 as usize,
+                $a4 as usize, $a5 as usize, $a6 as usize,
+                $a7 as usize) );
 }

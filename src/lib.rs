@@ -37,3 +37,7 @@ pub mod platform;
 #[cfg(all(target_os="freebsd", target_arch="x86_64"))]
 #[path="platform/freebsd-x86_64/mod.rs"]
 pub mod platform;
+
+#[cfg(all(target_os="linux", target_arch="arm"))]
+#[path="platform/linux-armeabi/mod.rs"]
+pub mod platform;
