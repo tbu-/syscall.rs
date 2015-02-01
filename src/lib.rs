@@ -13,8 +13,8 @@
 #![crate_type="lib"]
 
 #![feature(asm)]
+#![feature(core)]
 #![deny(warnings)]
-#![allow(unstable)]
 #![no_std]
 
 extern crate core;
