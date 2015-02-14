@@ -12,7 +12,7 @@
 #![crate_name="syscall"]
 #![crate_type="lib"]
 
-#![feature(asm)]
+#![feature(asm, no_std)]
 #![feature(core)]
 #![deny(warnings)]
 #![no_std]
