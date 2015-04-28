@@ -1,7 +1,7 @@
 [package]
 
 name = "syscall"
-version = "0.1.0"
+version = "0.2.0"
 description = "Raw system calls"
 repository = "https://github.com/kmcallister/syscall.rs"
 readme = "README.md"
