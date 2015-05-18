@@ -41,3 +41,7 @@ pub mod platform;
 #[cfg(all(target_os="linux", target_arch="arm"))]
 #[path="platform/linux-armeabi/mod.rs"]
 pub mod platform;
+
+#[cfg(all(target_os="macos", target_arch="x86_64"))]
+#[path="platform/macos-x86_64/mod.rs"]
+pub mod platform;
