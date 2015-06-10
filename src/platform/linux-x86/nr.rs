@@ -352,3 +352,4 @@ pub const SECCOMP                  : usize = 354;
 pub const GETRANDOM                : usize = 355;
 pub const MEMFD_CREATE             : usize = 356;
 pub const BPF                      : usize = 357;
+pub const EXECVEAT                 : usize = 358;
