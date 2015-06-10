@@ -331,3 +331,4 @@ pub const GETRANDOM                       : usize = 318;
 pub const MEMFD_CREATE                    : usize = 319;
 pub const KEXEC_FILE_LOAD                 : usize = 320;
 pub const BPF                             : usize = 321;
+pub const EXECVEAT                        : usize = 322;
