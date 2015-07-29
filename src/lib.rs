@@ -16,6 +16,7 @@
 #![feature(core)]
 #![deny(warnings)]
 #![no_std]
+#![allow(unused_mut)]
 
 extern crate core;
 
