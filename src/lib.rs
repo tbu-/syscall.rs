@@ -13,12 +13,9 @@
 #![crate_type="lib"]
 
 #![feature(asm, no_std)]
-#![feature(core)]
 #![deny(warnings)]
 #![no_std]
 #![allow(unused_mut)]
-
-extern crate core;
 
 #[cfg(test)]
 extern crate std;
