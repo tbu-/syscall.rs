@@ -418,3 +418,4 @@ pub const ACCEPT4                   : usize = 541;
 pub const PIPE2                     : usize = 542;
 pub const AIO_MLOCK                 : usize = 543;
 pub const PROCCTL                   : usize = 544;
+pub const PPOLL                     : usize = 545;
