@@ -9,6 +9,8 @@
 
 //! Raw system calls for Rust.
 
+// Reference http://man7.org/linux/man-pages/man2/syscall.2.html
+
 #![feature(asm)]
 #![deny(warnings)]
 #![no_std]
@@ -48,6 +50,11 @@ pub mod platform;
 #[cfg(all(target_os = "linux",
           target_arch = "powerpc64"))]
 #[path="platform/linux-powerpc64/mod.rs"]
+pub mod platform;
+
+#[cfg(all(target_os = "linux",
+          target_arch = "sparc64"))]
+#[path="platform/linux-sparc64/mod.rs"]
 pub mod platform;
 
 #[cfg(all(target_os = "linux",
