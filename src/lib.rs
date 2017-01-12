@@ -9,13 +9,9 @@
 
 //! Raw system calls for Rust.
 
-#![crate_name="syscall"]
-#![crate_type="lib"]
-
 #![feature(asm)]
 #![deny(warnings)]
 #![no_std]
-#![allow(unused_mut)]
 
 #[cfg(test)]
 extern crate std;
