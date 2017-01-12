@@ -11,8 +11,8 @@
 
 // Reference http://man7.org/linux/man-pages/man2/syscall.2.html
 
-#![feature(asm)]
 #![deny(warnings)]
+#![feature(asm)]
 #![no_std]
 
 #[cfg(test)]
