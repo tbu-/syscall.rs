@@ -13,7 +13,7 @@ pub mod nr;
 
 #[inline(always)]
 pub unsafe fn syscall0(n: usize) -> usize {
-    let ret : usize;
+    let ret: usize;
     asm!("int $$0x80" : "={eax}"(ret)
                       : "{eax}"(n)
                       : "memory" "cc"
@@ -23,7 +23,7 @@ pub unsafe fn syscall0(n: usize) -> usize {
 
 #[inline(always)]
 pub unsafe fn syscall1(n: usize, a1: usize) -> usize {
-    let ret : usize;
+    let ret: usize;
     asm!("int $$0x80" : "={eax}"(ret)
                       : "{eax}"(n), "{ebx}"(a1)
                       : "memory" "cc"
@@ -33,7 +33,7 @@ pub unsafe fn syscall1(n: usize, a1: usize) -> usize {
 
 #[inline(always)]
 pub unsafe fn syscall2(n: usize, a1: usize, a2: usize) -> usize {
-    let ret : usize;
+    let ret: usize;
     asm!("int $$0x80" : "={eax}"(ret)
                       : "{eax}"(n), "{ebx}"(a1), "{ecx}"(a2)
                       : "memory" "cc"
@@ -43,7 +43,7 @@ pub unsafe fn syscall2(n: usize, a1: usize, a2: usize) -> usize {
 
 #[inline(always)]
 pub unsafe fn syscall3(n: usize, a1: usize, a2: usize, a3: usize) -> usize {
-    let ret : usize;
+    let ret: usize;
     asm!("int $$0x80" : "={eax}"(ret)
                       : "{eax}"(n), "{ebx}"(a1), "{ecx}"(a2), "{edx}"(a3)
                       : "memory" "cc"
@@ -52,9 +52,13 @@ pub unsafe fn syscall3(n: usize, a1: usize, a2: usize, a3: usize) -> usize {
 }
 
 #[inline(always)]
-pub unsafe fn syscall4(n: usize, a1: usize, a2: usize, a3: usize,
-                                a4: usize) -> usize {
-    let ret : usize;
+pub unsafe fn syscall4(n: usize,
+                       a1: usize,
+                       a2: usize,
+                       a3: usize,
+                       a4: usize)
+                       -> usize {
+    let ret: usize;
     asm!("int $$0x80" : "={eax}"(ret)
                       : "{eax}"(n), "{ebx}"(a1), "{ecx}"(a2), "{edx}"(a3),
                         "{esi}"(a4)
@@ -64,9 +68,14 @@ pub unsafe fn syscall4(n: usize, a1: usize, a2: usize, a3: usize,
 }
 
 #[inline(always)]
-pub unsafe fn syscall5(n: usize, a1: usize, a2: usize, a3: usize,
-                                a4: usize, a5: usize) -> usize {
-    let ret : usize;
+pub unsafe fn syscall5(n: usize,
+                       a1: usize,
+                       a2: usize,
+                       a3: usize,
+                       a4: usize,
+                       a5: usize)
+                       -> usize {
+    let ret: usize;
     asm!("int $$0x80" : "={eax}"(ret)
                       : "{eax}"(n), "{ebx}"(a1), "{ecx}"(a2), "{edx}"(a3),
                         "{esi}"(a4), "{edi}"(a5)
@@ -76,11 +85,16 @@ pub unsafe fn syscall5(n: usize, a1: usize, a2: usize, a3: usize,
 }
 
 #[inline(always)]
-pub unsafe fn syscall6(n: usize, a1: usize, a2: usize, a3: usize,
-                                a4: usize, a5: usize, a6: usize) -> usize {
-    let ret : usize;
+pub unsafe fn syscall6(n: usize,
+                       a1: usize,
+                       a2: usize,
+                       a3: usize,
+                       a4: usize,
+                       a5: usize,
+                       a6: usize)
+                       -> usize {
+    let ret: usize;
 
-    //
     // XXX: this fails when building without optimizations:
     //
     //    asm!("int $$0x80" : "={eax}"(ret)
@@ -91,8 +105,8 @@ pub unsafe fn syscall6(n: usize, a1: usize, a2: usize, a3: usize,
     //
     // error: ran out of registers during register allocation
     //
-    // XXX: this fails when building with optimizations as the "m"(a6) gets translated to
-    // [esp+offset] but the push ebp moved esp.
+    // XXX: this fails when building with optimizations as the "m"(a6) gets
+    // translated to [esp+offset] but the push ebp moved esp.
     //
     //      asm!("push %ebp
     //            mov $7, %ebp
@@ -104,10 +118,11 @@ pub unsafe fn syscall6(n: usize, a1: usize, a2: usize, a3: usize,
     //              : "memory" "cc"
     //              : "volatile");
     //
-    // XXX: in general putting "ebp" in clobber list seems to not have any effect.
+    // XXX: in general putting "ebp" in clobber list seems to not have any
+    // effect.
     //
-    // As workaround only use a single input operand with known memory layout and manually save
-    // restore ebp.
+    // As workaround only use a single input operand with known memory layout
+    // and manually save restore ebp.
     let args = [n, a1, a2, a3, a4, a5, a6];
 
     asm!("push %ebp
