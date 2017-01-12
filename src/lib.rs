@@ -31,6 +31,16 @@ pub mod platform;
 pub mod platform;
 
 #[cfg(all(target_os = "linux",
+          target_arch = "powerpc"))]
+#[path="platform/linux-powerpc/mod.rs"]
+pub mod platform;
+
+#[cfg(all(target_os = "linux",
+          target_arch = "powerpc64"))]
+#[path="platform/linux-powerpc64/mod.rs"]
+pub mod platform;
+
+#[cfg(all(target_os = "linux",
           target_arch = "x86"))]
 #[path="platform/linux-x86/mod.rs"]
 pub mod platform;
