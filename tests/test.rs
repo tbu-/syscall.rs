@@ -8,18 +8,18 @@
 // except according to those terms.
 
 #[macro_use]
-extern crate syscall;
+extern crate sc;
 
 // getpid() is POSIX but that doesn't guarantee it's a system call.
-#[cfg(any(target_os="linux", target_os="freebsd"))]
+#[cfg(any(target_os = "linux", target_os = "freebsd"))]
 #[test]
 fn getpid() {
     unsafe {
-        assert!(0 < syscall::syscall0(syscall::nr::GETPID));
+        assert!(0 < sc::syscall0(sc::nr::GETPID));
     }
 }
 
-#[cfg(any(target_os="linux", target_os="freebsd"))]
+#[cfg(any(target_os = "linux", target_os = "freebsd"))]
 #[test]
 fn getpid_macro() {
     unsafe {
