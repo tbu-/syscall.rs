@@ -15,7 +15,7 @@ pub mod nr;
 pub unsafe fn syscall0(mut n: usize) -> usize {
     asm!("int $$0x80"
          : "+{eax}"(n)
-         : "{eax}"(n)
+         :
          : "memory" "cc"
          : "volatile");
     n
@@ -76,8 +76,7 @@ pub unsafe fn syscall5(mut n: usize,
                        -> usize {
     asm!("int $$0x80"
          : "+{eax}"(n)
-         : "{ebx}"(a1) "{ecx}"(a2) "{edx}"(a3) "{esi}"(a4)
-           "{edi}"(a5)
+         : "{ebx}"(a1) "{ecx}"(a2) "{edx}"(a3) "{esi}"(a4) "{edi}"(a5)
          : "memory" "cc"
          : "volatile");
     n
