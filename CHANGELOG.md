@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Fixed
+
+- syscall2 for linux-aarch64. There was a type in the register constraints.
+
 ## v0.1.0 - 2017-01-13
 
 Initial release. Forked from [syscall] v0.2.1.
@@ -13,7 +17,9 @@ Initial release. Forked from [syscall] v0.2.1.
 
 - Support for ARM, Aarch64, MIPS, MIPS64, PowerPC, PowerPC64, SPARC64, x86 and
   x86_64 Linux
+
 - Support for x86_64 macOS
+
 - Support for x86_64 FreeBSD
 
 [Unreleased]: https://github.com/japaric/syscall.rs/compare/v0.1.0...HEAD

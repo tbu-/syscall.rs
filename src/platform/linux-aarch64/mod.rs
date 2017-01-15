@@ -37,7 +37,7 @@ pub unsafe fn syscall1(n: usize, a1: usize) -> usize {
 pub unsafe fn syscall2(n: usize, a1: usize, a2: usize) -> usize {
     let ret: usize;
     asm!("svc 0"
-         : "={r0}"(ret)
+         : "={x0}"(ret)
          : "{x8}"(n) "{x0}"(a1) "{x1}"(a2)
          : "memory" "cc"
          : "volatile");
