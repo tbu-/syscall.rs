@@ -173,6 +173,7 @@ pub const MUNLOCKALL: usize = 152;
 pub const MUNMAP: usize = 11;
 pub const NAME_TO_HANDLE_AT: usize = 303;
 pub const NANOSLEEP: usize = 35;
+pub const NEWFSTATAT: usize = 262;
 pub const NFSSERVCTL: usize = 180;
 // pub const NICE: usize = __NR_nice;
 pub const OPEN: usize = 2;
