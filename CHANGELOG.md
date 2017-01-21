@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+
+- syscall5 and syscall6 for mips
+
 ## [v0.1.1] - 2017-01-14
 
 ### Fixed
