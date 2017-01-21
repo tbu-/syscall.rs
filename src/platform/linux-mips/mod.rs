@@ -104,10 +104,12 @@ pub unsafe fn syscall5(mut nr: usize,
                        mut a4: usize,
                        a5: usize)
                        -> usize {
-    asm!("subu $$29,20
+    asm!(".set noat
+          subu $$29,20
           sw $5, 16($$29)
           syscall
-          addiu $$29,20"
+          addiu $$29,20
+          .set at"
          : "+{$2}"(nr) "+{$7}"(a4)
          : "{$4}"(a1) "{$5}"(a2) "{$6}"(a3) "r"(a5)
          : "$8" "$9" "$10" "$11" "$12" "$13" "$14" "$15" "$24" "$25" "memory"
@@ -124,11 +126,13 @@ pub unsafe fn syscall6(mut nr: usize,
                        a5: usize,
                        a6: usize)
                        -> usize {
-    asm!("subu $$29,24
+    asm!(".set noat
+          subu $$29,24
           sw $5, 16($$29)
           sw $6, 20($$29)
           syscall
-          addiu $$29,24"
+          addiu $$29,24
+          .set at"
          : "+{$2}"(nr) "+{$7}"(a4)
          : "{$4}"(a1) "{$5}"(a2) "{$6}"(a3) "r"(a5) "r"(a6)
          : "$8" "$9" "$10" "$11" "$12" "$13" "$14" "$15" "$24" "$25" "memory"

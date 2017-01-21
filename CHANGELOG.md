@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Fixed
+
+- Error when using MIPS' syscall5/syscall6 with optimizations enabled
+
 ## [v0.1.2] - 2017-01-21
 
 ### Added
