@@ -5,6 +5,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [v0.1.2] - 2017-01-21
+
 ### Added
 
 - syscall5 and syscall6 for mips
@@ -28,5 +30,6 @@ Initial release. Forked from [syscall] v0.2.1.
 
 - Support for x86_64 FreeBSD
 
-[Unreleased]: https://github.com/japaric/syscall.rs/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/japaric/syscall.rs/compare/v0.1.2...HEAD
+[v0.1.2]: https://github.com/japaric/syscall.rs/compare/v0.1.1...v0.1.2
 [v0.1.1]: https://github.com/japaric/syscall.rs/compare/v0.1.0...v0.1.1
