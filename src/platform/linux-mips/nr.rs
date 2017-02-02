@@ -96,6 +96,7 @@ pub const GETPGRP: usize = 4065;
 pub const GETPID: usize = 4020;
 pub const GETPPID: usize = 4064;
 pub const GETPRIORITY: usize = 4096;
+pub const GETRANDOM: usize = 4353;
 pub const GETRESGID: usize = 4191;
 // pub const GETRESGID32: usize = __NR_getresgid32;
 pub const GETRESUID: usize = 4186;
