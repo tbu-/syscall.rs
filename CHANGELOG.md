@@ -5,6 +5,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [v0.1.4] - 2017-02-02
+
+### Added
+
+- GETRANDOM and NEWFSTATAT syscalls
+
 ## [v0.1.3] - 2017-01-21
 
 ### Fixed
@@ -36,7 +42,8 @@ Initial release. Forked from [syscall] v0.2.1.
 
 - Support for x86_64 FreeBSD
 
-[Unreleased]: https://github.com/japaric/syscall.rs/compare/v0.1.3...HEAD
+[Unreleased]: https://github.com/japaric/syscall.rs/compare/v0.1.4...HEAD
+[v0.1.4]: https://github.com/japaric/syscall.rs/compare/v0.1.3...v0.1.4
 [v0.1.3]: https://github.com/japaric/syscall.rs/compare/v0.1.2...v0.1.3
 [v0.1.2]: https://github.com/japaric/syscall.rs/compare/v0.1.1...v0.1.2
 [v0.1.1]: https://github.com/japaric/syscall.rs/compare/v0.1.0...v0.1.1
