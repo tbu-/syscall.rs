@@ -5,6 +5,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [v0.1.5] - 2017-02-03
+
+### Fixed
+
+- The syscall number for GETRANDOM on x86
+
 ## [v0.1.4] - 2017-02-02
 
 ### Added
@@ -42,7 +48,8 @@ Initial release. Forked from [syscall] v0.2.1.
 
 - Support for x86_64 FreeBSD
 
-[Unreleased]: https://github.com/japaric/syscall.rs/compare/v0.1.4...HEAD
+[Unreleased]: https://github.com/japaric/syscall.rs/compare/v0.1.5...HEAD
+[v0.1.5]: https://github.com/japaric/syscall.rs/compare/v0.1.4...v0.1.5
 [v0.1.4]: https://github.com/japaric/syscall.rs/compare/v0.1.3...v0.1.4
 [v0.1.3]: https://github.com/japaric/syscall.rs/compare/v0.1.2...v0.1.3
 [v0.1.2]: https://github.com/japaric/syscall.rs/compare/v0.1.1...v0.1.2
