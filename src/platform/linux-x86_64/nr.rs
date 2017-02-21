@@ -350,3 +350,4 @@ pub const WAIT4: usize = 61;
 pub const WAITID: usize = 247;
 pub const WRITE: usize = 1;
 pub const WRITEV: usize = 20;
+pub const ARCH_PRCTL: usize = 158;
