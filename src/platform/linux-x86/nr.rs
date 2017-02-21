@@ -350,3 +350,4 @@ pub const WAIT4: usize = 114;
 pub const WAITID: usize = 284;
 pub const WRITE: usize = 4;
 pub const WRITEV: usize = 146;
+pub const SET_THREAD_AREA: usize = 243;
