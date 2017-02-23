@@ -134,7 +134,7 @@ pub unsafe fn syscall6(n: usize,
           int $$0x80
           pop %ebp"
          : "={eax}"(ret)
-         : "{eax}"(args)
+         : "{eax}"(&args)
          : "ebx" "ecx" "edx" "esi" "edi" "ebp" "memory" "cc"
          : "volatile");
     ret
