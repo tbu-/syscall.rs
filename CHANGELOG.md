@@ -5,6 +5,29 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [v0.2.0] - 2017-02-27
+
+### Added
+
+- More syscalls. Syscalls are now generated from the latest Linux version (4.10
+  at the time of writing this) source code.
+
+### Changed
+
+- [breaking-change]. Some syscalls have been renamed to match the Linux source
+  code.
+  - ARM
+    - SYNC_FILE_RANGE2 -> ARM_SYNC_FILE_RANGE
+  - SPARC64
+    - GETRESGID -> GETRESGID32
+    - GETRESUID -> GETRESUID32
+    - SETRESGID -> SETRESGID32
+    - SETRESUID -> SETRESUID32
+
+### Fixed
+
+- x86 syscall6. It was hitting rust-lang/rust#39098
+
 ## [v0.1.5] - 2017-02-03
 
 ### Fixed
@@ -48,7 +71,8 @@ Initial release. Forked from [syscall] v0.2.1.
 
 - Support for x86_64 FreeBSD
 
-[Unreleased]: https://github.com/japaric/syscall.rs/compare/v0.1.5...HEAD
+[Unreleased]: https://github.com/japaric/syscall.rs/compare/v0.2.0...HEAD
+[v0.2.0]: https://github.com/japaric/syscall.rs/compare/v0.1.5...v0.2.0
 [v0.1.5]: https://github.com/japaric/syscall.rs/compare/v0.1.4...v0.1.5
 [v0.1.4]: https://github.com/japaric/syscall.rs/compare/v0.1.3...v0.1.4
 [v0.1.3]: https://github.com/japaric/syscall.rs/compare/v0.1.2...v0.1.3
