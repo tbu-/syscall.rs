@@ -287,6 +287,7 @@ pub const SOCKETPAIR: usize = 53;
 pub const SPLICE: usize = 275;
 pub const STAT: usize = 4;
 pub const STATFS: usize = 137;
+pub const STATX: usize = 332;
 pub const SWAPOFF: usize = 168;
 pub const SWAPON: usize = 167;
 pub const SYMLINK: usize = 88;
