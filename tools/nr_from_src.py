@@ -33,6 +33,8 @@ def load_headers(names: Iterable[Tuple[str, str]], arch: str, extra: str = ''):
     with tempfile.NamedTemporaryFile(mode='w+', suffix='.h') as f:
         with tempfile.TemporaryDirectory() as temp_include_dir:
             os.mkdir('{}/asm'.format(temp_include_dir))
+            # Create empty asm/unistd-eabi.h and asm/unistd-common.h because
+            # the ARM asm/unistd.h header needs them.
             with open('{}/asm/unistd-eabi.h'.format(temp_include_dir), 'w'):
                 pass
             with open('{}/asm/unistd-common.h'.format(temp_include_dir), 'w'):
@@ -73,7 +75,6 @@ def main():
         print("didn't find anywhere near enough syscalls; hack must have failed")
         subprocess.check_call(['git', '--no-pager', 'grep', r'\<__\([A-Z]\+_\)\?NR_'], cwd=linux_path)
         sys.exit(1)
-    ARM_NAMES = ["breakpoint", "cacheflush", "usr26", "usr32", "set_tls"]
     numbers = {
             'linux-aarch64': dict(load_headers(names, 'arm64')),
             'linux-armeabi': dict(list(load_table('arch/arm/tools/syscall.tbl', {'common', 'eabi'})) + list(load_headers(names, 'arm', '#define __ARM_EABI__'))),
